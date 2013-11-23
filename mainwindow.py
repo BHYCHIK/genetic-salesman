@@ -4,6 +4,7 @@ from ui_mainwindow import Ui_MainWindow
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import Qt, pyqtSignal
 import salesman_solver
+from ScribbleArea import *
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, app):
@@ -11,6 +12,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.app = app
         self.btnSolve.clicked.connect(self.onBtnSolve)
+        self.wDrawing.mouseMoveEvent = self.onMouseDrawingMove
+        self.wDrawing.setMouseTracking(True)
+        self.wDrawing.leaveEvent = self.onMouseDrawingLeave
         self.points = [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0,5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (0, 13), (0, 14), (0, 15), (0, 16), (0, 17)]
     def onBtnSolve(self):
         self.teLog.clear()
@@ -28,3 +32,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.pbSolutionFound.setValue(int((i / generations_num) * 100))
             i = i + 1
         self.lePathLength.setText(str(path_len))
+    def onMouseDrawingMove(self, event):
+        self.lblMousePosition.setText("(%d, %d)" % (event.x(), event.y()))
+    def onMouseDrawingLeave(self, event):
+        self.lblMousePosition.setText("")

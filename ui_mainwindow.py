@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Sat Nov 23 23:04:39 2013
+# Created: Sat Nov 23 23:41:19 2013
 #      by: PyQt4 UI code generator 4.9.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -54,19 +54,26 @@ class Ui_MainWindow(object):
         self.lePathLength.setReadOnly(True)
         self.lePathLength.setObjectName(_fromUtf8("lePathLength"))
         self.verticalLayout.addWidget(self.lePathLength)
-        self.widget = QtGui.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(10, 400, 961, 225))
-        self.widget.setObjectName(_fromUtf8("widget"))
-        self.verticalLayout_2 = QtGui.QVBoxLayout(self.widget)
+        self.layoutWidget1 = QtGui.QWidget(self.centralwidget)
+        self.layoutWidget1.setGeometry(QtCore.QRect(10, 400, 961, 225))
+        self.layoutWidget1.setObjectName(_fromUtf8("layoutWidget1"))
+        self.verticalLayout_2 = QtGui.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_2.setMargin(0)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.teLog = QtGui.QPlainTextEdit(self.widget)
+        self.teLog = QtGui.QPlainTextEdit(self.layoutWidget1)
         self.teLog.setObjectName(_fromUtf8("teLog"))
         self.verticalLayout_2.addWidget(self.teLog)
-        self.pbSolutionFound = QtGui.QProgressBar(self.widget)
+        self.pbSolutionFound = QtGui.QProgressBar(self.layoutWidget1)
         self.pbSolutionFound.setProperty("value", 100)
         self.pbSolutionFound.setObjectName(_fromUtf8("pbSolutionFound"))
         self.verticalLayout_2.addWidget(self.pbSolutionFound)
+        self.wDrawing = QtGui.QWidget(self.centralwidget)
+        self.wDrawing.setGeometry(QtCore.QRect(20, 10, 731, 361))
+        self.wDrawing.setObjectName(_fromUtf8("wDrawing"))
+        self.lblMousePosition = QtGui.QLabel(self.centralwidget)
+        self.lblMousePosition.setGeometry(QtCore.QRect(777, 380, 181, 20))
+        self.lblMousePosition.setText(_fromUtf8(""))
+        self.lblMousePosition.setObjectName(_fromUtf8("lblMousePosition"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 980, 27))
