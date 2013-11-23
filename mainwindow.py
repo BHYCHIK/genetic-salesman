@@ -44,7 +44,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.solution = path
             self.pbSolutionFound.setValue(int((i / generations_num) * 100))
             i = i + 1
-            if (i % 20 == 0):
+            if (i % 10 == 0):
                 self.wDrawing.update()
         self.lePathLength.setText(str(path_len))
         self.solving = False
@@ -62,7 +62,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def paintDrawingEvent(self, event):
         qp = QtGui.QPainter()
         qp.begin(self.wDrawing)
-        qp.setPen(QColor('red'))
+        pen = QtGui.QPen()
+        pen.setColor(QColor('red'))
+        pen.setWidth(3)
+        qp.setPen(pen)
         for p in self.points:
             qp.drawPoint(p[0], p[1])
         if self.solving:
