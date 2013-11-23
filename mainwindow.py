@@ -69,6 +69,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for p in self.points:
             qp.drawPoint(p[0], p[1])
         if self.solving:
-            for i in list(range(0, len(self.solution) - 1)):
-                qp.drawLine(self.points[self.solution[i]][0], self.points[self.solution[i]][1], self.points[self.solution[i + 1]][0], self.points[self.solution[i + 1]][1])
+            for i in list(range(0, len(self.solution))):
+                qp.drawLine(self.points[self.solution[i]][0], self.points[self.solution[i]][1], self.points[self.solution[(i + 1) % len(self.solution)]][0], self.points[self.solution[(i + 1) % len(self.solution)]][1])
         qp.end()

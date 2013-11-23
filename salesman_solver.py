@@ -23,7 +23,7 @@ def solve(points, population_size, mutation_probability, iterations_number):
 
 def _fitness_function(points, individual):
     fitness = 0.0;
-    for i in range(0, len(individual) - 1):
+    for i in range(0, len(individual)):
         point_a = points[individual[i]]
         point_b = points[individual[(i + 1) % len(individual)]]
         fitness = fitness + math.sqrt(((point_a[0] - point_b[0]) ** 2) + ((point_a[1] - point_b[1]) ** 2))
