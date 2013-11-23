@@ -66,13 +66,13 @@ def _crossover(mother, father):
     left_corner = 1
     right_corner = len(mother) - 1
     for i in range(1, len(mother)):
-        while (mother[left_corner] in child) and (left_corner < len(mother)):
+        while (left_corner < len(mother)) and (mother[left_corner] in child):
             left_corner = left_corner + 1
         if _cont_crossover(child):
             child[i] = mother[left_corner]
         else:
             break
-        while (father[right_corner] in child) and (right_corner >= 0):
+        while (right_corner >= 0) and (father[right_corner] in child):
             right_corner = right_corner - 1
         if _cont_crossover(child):
             child[len(mother) - i] = father[right_corner]
