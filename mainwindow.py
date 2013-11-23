@@ -44,19 +44,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.solution = path
             self.pbSolutionFound.setValue(int((i / generations_num) * 100))
             i = i + 1
-            if (i % 10 == 0):
+            if (i % 20 == 0):
                 self.wDrawing.update()
         self.lePathLength.setText(str(path_len))
         self.wDrawing.update()
-        self.solving = False
     def onMouseDrawingMove(self, event):
         self.lblMousePosition.setText("(%d, %d)" % (event.x(), event.y()))
     def onMouseDrawingLeave(self, event):
         self.lblMousePosition.setText("")
     def onBtnClearPoints(self):
+        self.solving = False
         self.points = []
         self.wDrawing.update()
     def onMousePressDrawing(self, event):
+        self.solving = False
         self.points.append((event.x(), event.y()))
         self.teLog.appendPlainText("Добавлена точка (%d, %d)" % (event.x(), event.y()))
         self.wDrawing.update()
