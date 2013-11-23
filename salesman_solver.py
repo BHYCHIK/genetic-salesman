@@ -15,7 +15,7 @@ def solve(points, population_size, mutation_probability, iterations_number):
             generation.append(_crossover(generation[i], generation[i + 1]))
             generation.append(_crossover(generation[i + 1], generation[i]))
         for i in range(0, population_size):
-            if random.random() < mutation_probability:
+            if i != 0 and random.random() < mutation_probability:
                 generation[i] = _mutate(generation[i])
     generation.sort(key=fitness)
     yield (fitness(generation[0]), generation[0][:])

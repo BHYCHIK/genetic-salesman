@@ -17,10 +17,55 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>961</width>
+      <height>225</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QPlainTextEdit" name="teLog"/>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="pbSolutionFound">
+       <property name="value">
+        <number>100</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="wDrawing" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>731</width>
+      <height>361</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblMousePosition">
+    <property name="geometry">
+     <rect>
+      <x>777</x>
+      <y>380</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
       <x>780</x>
-      <y>11</y>
+      <y>12</y>
       <width>188</width>
-      <height>253</height>
+      <height>286</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -87,52 +132,14 @@
        </property>
       </widget>
      </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>400</y>
-      <width>961</width>
-      <height>225</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QPlainTextEdit" name="teLog"/>
-     </item>
-     <item>
-      <widget class="QProgressBar" name="pbSolutionFound">
-       <property name="value">
-        <number>100</number>
+      <widget class="QPushButton" name="btnClearPoints">
+       <property name="text">
+        <string>Очистить точки</string>
        </property>
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QWidget" name="wDrawing" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>731</width>
-      <height>361</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblMousePosition">
-    <property name="geometry">
-     <rect>
-      <x>777</x>
-      <y>380</y>
-      <width>181</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
