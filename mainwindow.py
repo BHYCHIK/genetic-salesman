@@ -47,6 +47,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if (i % 10 == 0):
                 self.wDrawing.update()
         self.lePathLength.setText(str(path_len))
+        self.wDrawing.update()
         self.solving = False
     def onMouseDrawingMove(self, event):
         self.lblMousePosition.setText("(%d, %d)" % (event.x(), event.y()))
